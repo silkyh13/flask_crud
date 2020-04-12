@@ -25,9 +25,9 @@ class AddPost(Resource):
 
 # update one entry
 class Put(Resource):
-    def put(self, topic):
-        # print(Post.find_by_topic(topic).__dict__["topic"], "made it here")
-        return Post.put(topic)
+    def put(self):
+        data = parser.parse_args()
+        return Post.put(data["topic"], data["content"])
 
 
 # get all entries

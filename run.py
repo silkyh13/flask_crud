@@ -22,7 +22,7 @@ api.add_resource(resources.AddPost, "/post")
 api.add_resource(resources.GetAll, "/find")
 api.add_resource(resources.DeleteAll, "/delete")
 api.add_resource(resources.Delete, "/delete/<topic>")
-api.add_resource(resources.Put, "/put/<topic>")
+api.add_resource(resources.Put, "/put")
 
 api.init_app(app)
 if __name__ == "__main__":
