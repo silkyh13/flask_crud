@@ -31,6 +31,12 @@ class Post(db.Model):
         return cls.query.filter_by(topic=topic).first()
 
     @classmethod
+    def put(cls, topic):
+        cls.query.filter_by(topic=topic).update({"content": "random message"})
+        db.session.commit()
+        return {"message": "Topic {} was updated".format(topic)}
+
+    @classmethod
     def delete(cls, topic):
         cls.query.filter_by(topic=topic).delete()
         db.session.commit()

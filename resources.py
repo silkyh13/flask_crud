@@ -23,6 +23,14 @@ class AddPost(Resource):
             return {"message": "Something went wrong"}, 500
 
 
+# update one entry
+class Put(Resource):
+    def put(self, topic):
+        # print(Post.find_by_topic(topic).__dict__["topic"], "made it here")
+        return Post.put(topic)
+
+
+# get all entries
 class GetAll(Resource):
     def get(self):
         posts = Post.get_all()
